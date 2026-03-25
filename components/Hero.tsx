@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center px-6 pt-20 md:pt-28 md:pb-36 text-center mx-auto w-full max-w-7xl">
+    <section className="relative z-10 flex flex-col items-center justify-center px-6 pt-4 md:pt-10 pb-5 md:pb-10 text-center">
       <div className="mb-8 inline-flex items-center gap-2 border border-yellow-400 bg-gray-200 text-yellow-900 px-4 py-1.5 rounded-full text-xs tracking-widest">
         <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
         Usage Analytics Platform
@@ -49,16 +49,31 @@ const Hero = () => {
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        <Button>
-          <Link href="/dashboard" className="">
+      <div className="flex flex-col sm:flex-row gap-4 items-center">
+        <Button
+          asChild
+          size="lg"
+          variant="default"
+          className="group relative overflow-hidden bg-yellow-400 text-yellow-900 hover:bg-yellow-500 font-bold tracking-wide px-8 rounded-lg transition-all duration-200 shadow-[0_0_30px_rgba(255,190,50,0.25)] hover:shadow-[0_0_40px_rgba(255,190,50,0.45)] font-mono"
+        >
+          <Link href="/dashboard" className="flex items-center gap-2.5">
             Stats Dashboard
-            <ArrowUpRight />
+            <ArrowUpRight className="w-4 h-4 opacity-70" />
           </Link>
         </Button>
 
-        <Button>
-          <Link href="/sign-in">Sign In</Link>
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="font-mono font-semibold tracking-wide px-8 rounded-sm hover:bg-yellow-500 backdrop-blur-lg transition-all duration-200"
+        >
+          <Link
+            href="/sign-in"
+            className="flex items-center transition-transform"
+          >
+            Sign In
+          </Link>
         </Button>
       </div>
     </section>
